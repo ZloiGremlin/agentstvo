@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load cms_tags sekizai_tags %}
+{% load menu_tags %}
+
+{% block content %}
+
+    {% placeholder 'slider' %}
+
+    <div class="content">
+        <div class="container">
+
+            {% placeholder content %}
+
+        </div>
+    </div>
+{% endblock %}

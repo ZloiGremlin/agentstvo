@@ -1,0 +1,28 @@
+{% load thumbnail %}
+<div id="pxs_container" class="pxs_container">
+    <div class="pxs_bg">
+        <div class="pxs_bg1"></div>
+        <div class="pxs_bg2"></div>
+    </div>
+    <div class="pxs_loading">Загрузка изображений...</div>
+    <div class="pxs_slider_wrapper">
+        <ul class="pxs_slider">
+            {% for item in instance.album.images.all %}
+                {% thumbnail item.image '984x372' upscale=True as img %}
+                    <li><img src="{{ img.url }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ item.anme }}"/></li>
+                {% endthumbnail %}
+            {% endfor %}
+        </ul>
+        <div class="pxs_navigation">
+            <span class="pxs_next"></span>
+            <span class="pxs_prev"></span>
+        </div>
+        <ul class="pxs_thumbnails">
+            {% for item in instance.album.images.all %}
+            {% thumbnail item.image '93x65' crop='center' upscale=True as img %}
+                <li><img src="{{ img.url }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ item.anme }}"/></li>
+            {% endthumbnail %}
+        {% endfor %}
+        </ul>
+    </div>
+</div>

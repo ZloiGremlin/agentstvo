@@ -1,0 +1,74 @@
+{% load cms_tags sekizai_tags %}
+{% load menu_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% page_attribute "page_title" %}</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    {% render_block "css" %}
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/font.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/reset.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/slider.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/fix.css"/>
+
+</head>
+<body>
+{% cms_toolbar %}
+<div id="container">
+<div class="top">
+    <div class="container">
+        <div class="lp fll"><span>+7 (906)</span> 669-55-16</div>
+        <a class="logo" href="/"><img src="{{ STATIC_URL }}images/logo.png" width="279" height="137" alt=""/></a>
+
+        <div class="rp flr">Вязьма, ул. Ленина, д. 56, офис 110</div>
+        <div class="clr"></div>
+
+        <div class="main-menu">
+            <ul>
+                {% show_menu 0 100 0 100 "menus/menu.html" %}
+
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+    {% block content %}
+
+    {% placeholder 'slider' %}
+
+<div class="content" style="background: none;">
+<div class="container">
+
+    {% placeholder 'content' %}
+
+</div>
+</div>
+    {% endblock %}
+
+<div class="footer">
+    <div class="container">
+
+        <div class="menu fll">
+            <ul>
+                {% show_menu 0 100 0 100 "menus/menu.html" %}
+            </ul>
+        </div>
+
+        <div class="contacts flr">
+            <span><em>+7 (906) </em> 669- 55-16</span>
+            <p>Вязьма, ул. Ленина, д. 56, офис 110</p>
+
+        </div>
+        <div class="clr"></div>
+
+    </div>
+</div>
+</div>
+{% render_block "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/slider.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+</body>
+</html>

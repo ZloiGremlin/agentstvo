@@ -1,0 +1,16 @@
+{% for service in instance.service.all %}
+    <div class="block50 {% cycle 'fll' 'flr' %}">
+        <a href="{{ service.page.get_absolute_url }}">
+            <img src="{{ service.image.url }}" width="{{ service.image.width }}" height="{{ service.image.height }}" alt=""/>
+            <span class="info">
+                <span class="name">{{ service.name }}</span>
+                <p>{{ service.teaser }}</p>
+                <span class="more">подробнее</span>
+            </span>
+            <div class="clr"></div>
+        </a>
+    </div>
+    {% if forloop.last or forloop.counter|divisibleby:2 %}
+        <div class="clr"></div>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,222 @@
+body{
+    background: #000 url("../images/body-bg.jpg") no-repeat center top;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+#container{
+    min-width: 1024px;
+}
+
+a{
+    color: #fff;
+
+}
+
+.container{
+    width: 1000px;
+    margin:  0 auto;
+    position: relative;
+}
+
+.top .lp{
+    font-family: "vetren", serif;
+    font-size: 48px;
+    color: #f6ff04;
+    text-align: left;
+    width: 345px;
+    border-bottom:  2px solid #8e8e8e;
+    height: 85px;
+    padding-top: 50px;
+    
+}
+
+.top .lp span{
+    color: #fff;
+    font-size: 30px;
+}
+
+
+.top .rp{
+    width: 345px;
+    font-size: 14px;
+    text-align: right;
+    border-bottom:  2px solid #8e8e8e;
+    height: 60px;
+    padding-top: 75px;
+   
+
+}
+
+.top .logo{
+    display: block;
+    width: 279px;
+    height: 137px;
+    position: absolute;
+    left: 50%;
+    margin-left: -140px;
+    top:0;
+}
+
+.main-menu{
+    padding-top: 35px;
+    margin-bottom: 40px;
+}
+
+
+.main-menu li{
+    float: left;
+    margin-right: 106px;
+}
+
+.main-menu li.last{
+    margin-right:  0;
+}
+
+.main-menu li a{
+    color: #fff;
+    text-decoration: underline;
+    font-family: "vetren", sans-serif;
+    font-size: 24px;
+    
+}
+
+.main-menu li a:hover{
+    text-decoration: none;
+}
+
+.main-menu li.active a{
+    color: #f6ff04;
+    text-decoration: none;
+}
+
+
+.content{
+    padding-top: 65px;
+    background: url("../images/body-bg.jpg") no-repeat center top;
+}
+
+
+.content .block50 a{
+    text-decoration: none;
+    display: block;
+
+}
+
+.content .block50 a:hover .name{
+    text-decoration: none;
+}
+
+
+
+.content .block50 span{
+    display: block;
+}
+
+.content .block50 .name{
+    font-family: 'vetren', serif;
+    font-size: 30px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.content .block50 .name:hover{
+    text-decoration: none;
+}
+
+.content .block50 img{
+    float: left;
+}
+
+.content .block50 .info{
+    display: block;
+    margin-left: 35px;
+}
+
+.content .block50 p{
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.content .block50 .more{
+    color: #f6ff04;
+    font-size: 14px;
+    background: url("../images/arr-more.png") no-repeat right;
+    padding-right: 20px;
+    float: left;
+}
+
+.content .block50{
+    width: 430px;
+    margin-bottom: 55px;
+
+
+}
+
+.txt p{
+    line-height: 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+.txt{
+    margin-bottom: 70px;
+}
+
+
+
+
+.footer .container{
+    border-top: 2px solid #808080;
+    height: 105px;
+
+}
+
+
+
+.footer li a{
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+
+}
+
+.footer li{
+    float: left;
+    margin-right: 20px;
+    padding-top: 40px;
+
+}
+
+.footer li a:hover{
+    text-decoration: none;
+}
+
+
+.footer .contacts{
+    text-align: right;
+}
+
+.footer .contacts span{
+    display: block;
+    font-family: 'vetren', serif;
+    font-size: 34px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.footer .contacts span em{
+    font-style: normal;
+    font-size: 21px;
+}
+
+.footer .contacts p{
+    font-size: 14px;
+    margin-bottom: 15px;
+
+}
+
