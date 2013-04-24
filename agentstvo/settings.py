@@ -192,3 +192,10 @@ LOGGING = {
         },
     }
 }
+
+ALLOWED_HOSTS = ['agent.propeller.su']
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
