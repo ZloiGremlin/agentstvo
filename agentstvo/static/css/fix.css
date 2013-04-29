@@ -1,3 +1,19 @@
 .content .block50 .info {
     margin-left: 122px;
 }
+
+.span3.pull-right {
+    width: 200px;
+}
+
+.span7 {
+    width: 520px;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+#image_gallery {
+    margin-bottom: 35px;
+}

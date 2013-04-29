@@ -9,6 +9,9 @@
     <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/font.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/reset.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/slider.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/nivo-slider.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/ilightbox.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/style.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/fix.css"/>
 
@@ -26,7 +29,7 @@
 
         <div class="main-menu">
             <ul>
-                {% show_menu 0 100 0 100 "menus/menu.html" %}
+                {% show_menu 0 0 0 100 %}
 
             </ul>
             <div class="clr"></div>
@@ -37,8 +40,11 @@
 
     {% placeholder 'slider' %}
 
-<div class="content" style="background: none;">
+<div class="content" style="background: none; padding-top: 0;">
 <div class="container">
+    <div class="breadcrumb">
+        {% show_breadcrumb %}
+    </div>
 
     {% placeholder 'content' %}
 
@@ -51,7 +57,7 @@
 
         <div class="menu fll">
             <ul>
-                {% show_menu 0 100 0 100 "menus/menu.html" %}
+                {% show_menu 0 0 0 100 %}
             </ul>
         </div>
 
@@ -69,6 +75,9 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/slider.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.nivo.slider.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/ilightbox.packed.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 </body>
 </html>

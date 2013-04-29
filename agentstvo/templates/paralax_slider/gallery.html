@@ -1,0 +1,14 @@
+{% load thumbnail %}
+<h2>{{ instance.album.name }}</h2>
+<ul class="thumbnails" id="image_gallery">
+    {% for item in images %}
+        {% thumbnail item.image '1000'  as big %}
+        <div style="display: none">{% cycle '380x329' '140x158' '220x155' '200x339' '220x150' '140x155' '220x330' '220x330' '520x322' as size %}</div>
+        {% thumbnail item.image size crop='center' upscale=True as img %}
+            <li class="{% cycle 'span5' 'span2' 'span3' 'span3 pull-right' 'span3' 'span2' 'span3' 'span3' 'span7' %}">
+                <a href="{{ big.url }}" class="thumbnail lbox"><img src="{{ img.url }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ item.anme }}"/></a>
+            </li>
+        {% endthumbnail %}
+        {% endthumbnail %}
+    {% endfor %}
+</ul>

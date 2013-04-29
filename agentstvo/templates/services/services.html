@@ -1,3 +1,7 @@
+<div class="blocks">
+    {% if instance.display %}
+        <h2>{{ instance.name }}</h2>
+    {% endif %}
 {% for service in instance.service.all %}
     <div class="block50 {% cycle 'fll' 'flr' %}">
         <a href="{{ service.page.get_absolute_url }}">
@@ -14,3 +18,4 @@
         <div class="clr"></div>
     {% endif %}
 {% endfor %}
+</div>
