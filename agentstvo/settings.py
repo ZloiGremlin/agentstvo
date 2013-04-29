@@ -193,7 +193,7 @@ LOGGING = {
     }
 }
 
-ALLOWED_HOSTS = ['agent.propeller.su']
+ALLOWED_HOSTS = ['agent.propeller.su', 'agentstvo67.ru', 'www.agentstvo67.ru']
 
 try:
     from local_settings import *
