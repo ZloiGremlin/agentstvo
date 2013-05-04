@@ -21,3 +21,107 @@ h2 {
 .breadcrumb {
     font-size: 11px;
 }
+
+.yellow {
+    font-size: 16px;
+    color: #f6ff04;
+}
+
+.cake {
+    width: 485px;
+}
+
+.thumber {
+    width: 220px;
+    height: 220px;
+    padding: 5px;
+    background: url("../images/border.png");
+    border-radius: 4px;
+    box-shadow: 0 0 14px #000;
+}
+
+.txt.first {
+    margin-bottom: 10px;
+}
+
+.cake {
+    margin-bottom: 40px;
+}
+
+.cake .thumber {
+    float: left;
+}
+
+.cake .info {
+    margin-left: 30px;
+    width: 225px;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.cake .info h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.cake .price{
+    float: left;
+    font-family: 'vetren', serif;
+    font-size: 24px;
+    color: #f6ff07;
+    display: block;
+    padding-top: 25px;
+
+}
+
+.cake .price span{
+    font-size: 36px;
+}
+
+
+.cake .price em{
+    font-style: normal;
+    font-size: 18px;
+    color: #fff;
+}
+
+.cake .order{
+    background: url("../images/order-but.png") no-repeat top;
+    height: 24px;
+    width: 126px;
+    display: block;
+    float: left;
+    color: #000;
+    font-family: 'vetren', serif;
+    text-decoration: none;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 10px;
+    margin-right: 35px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.cake .order:hover{
+    background: url("../images/order-but.png") no-repeat 0 -45px;
+
+}
+
+.pager {
+    margin-bottom: 40px;
+    font-size: 13px;
+}
+
+.pager strong {
+    margin: 0 4px;
+}
+
+.pager a {
+    color: #f6ff04;
+    margin: 0 4px;
+}
+
+.pager a:hover {
+    text-decoration: none;
+}
