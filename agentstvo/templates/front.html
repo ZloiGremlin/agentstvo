@@ -2,7 +2,7 @@
 {% load cms_tags sekizai_tags %}
 {% load menu_tags %}
 
-{% block content %}
+{% block main %}
 
     {% placeholder 'slider' %}
 
@@ -10,6 +10,12 @@
         <div class="container">
 
             {% placeholder content %}
+
+            {% block content %}
+
+            {% endblock %}
+
+            {% placeholder 'bottom' %}
 
         </div>
     </div>
