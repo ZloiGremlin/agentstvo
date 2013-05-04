@@ -52,7 +52,7 @@ h2 {
     float: left;
 }
 
-.cake .info {
+.cake .info, .comments .info {
     margin-left: 30px;
     width: 225px;
     float: left;
@@ -60,12 +60,12 @@ h2 {
     line-height: 16px;
 }
 
-.cake .info h2 {
+.cake .info h2, .comments h2 {
     font-size: 26px;
     margin-bottom: 20px;
 }
 
-.cake .price{
+.cake .price, .comments .price{
     float: left;
     font-family: 'vetren', serif;
     font-size: 24px;
@@ -75,18 +75,18 @@ h2 {
 
 }
 
-.cake .price span{
+.cake .price span, .comments .price span{
     font-size: 36px;
 }
 
 
-.cake .price em{
+.cake .price em, .comments .price em{
     font-style: normal;
     font-size: 18px;
     color: #fff;
 }
 
-.cake .order{
+.cake .order, .comments .order{
     background: url("../images/order-but.png") no-repeat top;
     height: 24px;
     width: 126px;
@@ -103,9 +103,15 @@ h2 {
     margin-top: 30px;
 }
 
-.cake .order:hover{
+.cake .order:hover, .comments .order:hover {
     background: url("../images/order-but.png") no-repeat 0 -45px;
 
+}
+
+.comments .order {
+    height: 35px;
+    font-size: 26px;
+    line-height: 26px;
 }
 
 .pager {
@@ -124,4 +130,25 @@ h2 {
 
 .pager a:hover {
     text-decoration: none;
+}
+
+.comments {
+    display: none;
+    position: fixed;
+    width: 260px;
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+    background: #000 url("../images/body-bg.jpg") no-repeat top right;
+    z-index: 100100;
+    padding: 10px;
+    box-shadow: 0 0 6px #777b0a;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.ilightbox-thumbnails.rightcom {
+    right: 320px;
 }
