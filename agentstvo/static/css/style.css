@@ -1,149 +1,142 @@
-body{
+body {
     background: #000 url("../images/body-bg.jpg") no-repeat center top;
     font-family: Arial, sans-serif;
     color: #fff;
 }
 
-p{
+p {
     font-size: 14px;
 }
 
-#container{
+#container {
     min-width: 1024px;
 }
 
-a{
+a {
     color: #fff;
 
 }
 
-.container{
+.container {
     width: 1000px;
-    margin:  0 auto;
+    margin: 0 auto;
     position: relative;
 }
 
-.top .lp{
+.top .lp {
     font-family: "vetren", serif;
     font-size: 48px;
     color: #f6ff04;
     text-align: left;
     width: 345px;
-    border-bottom:  2px solid #8e8e8e;
+    border-bottom: 2px solid #8e8e8e;
     height: 85px;
     padding-top: 50px;
-    
+
 }
 
-.top .lp span{
+.top .lp span {
     color: #fff;
     font-size: 30px;
 }
 
-
-.top .rp{
+.top .rp {
     width: 345px;
     font-size: 14px;
     text-align: right;
-    border-bottom:  2px solid #8e8e8e;
+    border-bottom: 2px solid #8e8e8e;
     height: 60px;
     padding-top: 75px;
-   
 
 }
 
-.top .logo{
+.top .logo {
     display: block;
     width: 279px;
     height: 137px;
     position: absolute;
     left: 50%;
     margin-left: -140px;
-    top:0;
+    top: 0;
 }
 
-.main-menu{
+.main-menu {
     padding-top: 35px;
     margin-bottom: 40px;
 }
 
-
-.main-menu li{
+.main-menu li {
     float: left;
     margin-right: 106px;
 }
 
-.main-menu li.last{
-    margin-right:  0;
+.main-menu li.last {
+    margin-right: 0;
 }
 
-.main-menu li a{
+.main-menu li a {
     color: #fff;
     text-decoration: underline;
     font-family: "vetren", sans-serif;
     font-size: 24px;
-    
+
 }
 
-.main-menu li a:hover{
+.main-menu li a:hover {
     text-decoration: none;
 }
 
-.main-menu li.active a{
+.main-menu li.active a {
     color: #f6ff04;
     text-decoration: none;
 }
 
-
-.content{
+.content {
     padding-top: 65px;
     background: url("../images/body-bg.jpg") no-repeat center top;
 }
 
-
-.content .block50 a{
+.content .block50 a {
     text-decoration: none;
     display: block;
 
 }
 
-.content .block50 a:hover .name{
+.content .block50 a:hover .name {
     text-decoration: none;
 }
 
-
-
-.content .block50 span{
+.content .block50 span {
     display: block;
 }
 
-.content .block50 .name{
+.content .block50 .name {
     font-family: 'vetren', serif;
     font-size: 30px;
     text-decoration: underline;
     margin-bottom: 10px;
 }
 
-.content .block50 .name:hover{
+.content .block50 .name:hover {
     text-decoration: none;
 }
 
-.content .block50 img{
+.content .block50 img {
     float: left;
 }
 
-.content .block50 .info{
+.content .block50 .info {
     display: block;
     margin-left: 35px;
 }
 
-.content .block50 p{
+.content .block50 p {
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 10px;
 }
 
-.content .block50 .more{
+.content .block50 .more {
     color: #f6ff04;
     font-size: 14px;
     background: url("../images/arr-more.png") no-repeat right;
@@ -151,36 +144,29 @@ a{
     float: left;
 }
 
-.content .block50{
+.content .block50 {
     width: 430px;
     margin-bottom: 55px;
 
-
 }
 
-.content .txt p{
+.content .txt p {
     line-height: 18px;
     margin-bottom: 20px;
     font-size: 14px;
 }
 
-
-.txt{
+.txt {
     margin-bottom: 70px;
 }
 
-
-
-
-.footer .container{
+.footer .container {
     border-top: 2px solid #808080;
     height: 105px;
 
 }
 
-
-
-.footer li a{
+.footer li a {
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -188,49 +174,47 @@ a{
 
 }
 
-.footer li{
+.footer li {
     float: left;
     margin-right: 20px;
     padding-top: 40px;
 
 }
 
-.footer li a:hover{
+.footer li a:hover {
     text-decoration: none;
 }
 
-
-.footer .contacts{
+.footer .contacts {
     text-align: right;
 }
 
-.footer .contacts span{
+.footer .contacts span {
     display: block;
     font-family: 'vetren', serif;
     font-size: 34px;
     padding-top: 20px;
     margin-bottom: 10px;
-    
+
 }
 
-.footer .contacts span em{
+.footer .contacts span em {
     font-style: normal;
     font-size: 21px;
 }
 
-.footer .contacts p{
+.footer .contacts p {
     font-size: 14px;
     margin-bottom: 15px;
 
 }
 
-
-.breadcrumb{
+.breadcrumb {
     font-size: 14px;
     margin-bottom: 20px;
 }
 
-.slider{
+.slider {
     float: left;
     overflow: hidden;
     height: 376px;
@@ -240,14 +224,14 @@ a{
     margin-right: 25px;
     margin-bottom: 30px;
 }
-h1{
+
+h1 {
     font-family: "vetren", serif;
     font-size: 36px;
     margin-bottom: 15px;
 }
 
-
-.txt .more{
+.txt .more {
     color: #f6ff04;
     background: url("../images/arr-more.png") no-repeat right;
     padding-right: 23px;
@@ -256,21 +240,18 @@ h1{
 
 }
 
-
-.txt .more:hover{
+.txt .more:hover {
     text-decoration: underline;
 }
 
-
-.txt .phone{
+.txt .phone {
     padding-top: 20px;
     font-family: 'vetren', serif;
     font-size: 30px;
     margin-bottom: 20px;
 }
 
-
-.txt .order{
+.txt .order {
     background: url("../images/order-but.png") no-repeat top;
     height: 36px;
     width: 126px;
@@ -285,12 +266,12 @@ h1{
     margin-right: 35px;
 }
 
-.txt .order:hover{
+.txt .order:hover {
     background: url("../images/order-but.png") no-repeat bottom;
 
 }
 
-.txt .price{
+.txt .price {
     float: left;
     font-family: 'vetren', serif;
     font-size: 24px;
@@ -300,26 +281,111 @@ h1{
 
 }
 
-.txt .price span{
+.txt .price span {
     font-size: 36px;
 }
 
-
-.txt .price em{
+.txt .price em {
     font-style: normal;
     font-size: 18px;
     color: #fff;
 }
 
-h2{
+h2 {
     font-size: 30px;
     font-family: "vetren", serif;
     margin-bottom: 45px;
 }
 
-
-.podpis{
+.podpis {
     margin-bottom: 60px;
+}
+
+.decor {
+    margin-bottom: 58px;
+}
+
+.decor .thumber {
+    width: 310px;
+    height: 310px;
+}
+
+.decor .info {
+    margin-left: 340px;
+    font-family: "vetren", serif;
+}
+
+.decor .info p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.decor .name {
+    text-decoration: none;
+    font-size: 30px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.decor .price {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.decor .price span {
+    color: #f6ff07;
+    font-size: 36px;
+}
+
+.decor .colors span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+.colors li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    box-shadow: inset 1px 1px 2px #000;
+}
+
+.colors li {
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+.colors li.active a{
+    box-shadow: 0;
+    border: 1px solid #fff;
+    box-shadow: none;
+}
+
+.colors{
+    margin-bottom: 15px;
+}
+
+.buy{
+    background: url("../images/buy-button.png") repeat-x top;
+    border-radius: 3px;
+    display: block;
+    width: 99px;
+    text-align: center;
+    height: 27px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    padding-top: 8px;
+}
+
+
+.buy:hover{
+    background-position: bottom;
 }
 
 
