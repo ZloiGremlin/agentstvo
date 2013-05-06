@@ -55,3 +55,55 @@ class Cake(models.Model):
         return '<img src="%s">' % im.url
     thumb.allow_tags = True
     thumb.short_description = u'Фото'
+
+
+class Decoration(models.Model):
+    class Meta:
+        verbose_name = u'Украшение'
+        verbose_name_plural = u'Украшения'
+        ordering = ['price']
+
+    name = models.CharField(max_length=255, verbose_name=u'Название')
+    description = models.TextField(max_length=255, verbose_name=u'Описание', blank=True, null=True)
+    price = models.IntegerField(verbose_name=u'Цена', default=0)
+    active = models.BooleanField(verbose_name=u'Отображение', default=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def get_first_color(self):
+        q = self.images.all()
+        if q.count() > 0:
+            return q[0]
+        else:
+            return None
+
+    def thumb(self):
+        im = get_thumbnail(self.get_first_color().image, '70x70', crop='center', quality=100)
+        return '<img src="%s">' % im.url
+    thumb.allow_tags = True
+    thumb.short_description = u'Фото'
+
+
+class Color(models.Model):
+    class Meta:
+        verbose_name = u'Цвет'
+        verbose_name_plural = u'Цвета'
+        ordering = ['name']
+
+    name = models.CharField(max_length=255, verbose_name=u'Название')
+    rgb = models.CharField(max_length=255, verbose_name=u'Код цвета')
+
+    def __unicode__(self):
+        return self.name
+
+
+class ImageInline(models.Model):
+    class Meta:
+        verbose_name = u'Фото'
+        verbose_name_plural = u'Фото'
+
+    image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
+    color = models.ForeignKey(Color, max_length=255, verbose_name=u'Цвет')
+    decoration = models.ForeignKey(Decoration, max_length=255, verbose_name=u'Украшение', related_name='images')
+    sort = models.IntegerField(verbose_name=u'Приоритет', default=100)

@@ -4,6 +4,14 @@ $(function () {
 
     $('.slider').nivoSlider();
 
+    $('.colors a').click(function(){
+        $('.colors li').removeClass('active');
+        $(this).parent().addClass('active');
+        $(this).parents('.decor').find('.thumber a:visible').hide(0);
+        $($(this).attr('href')).show();
+        return false;
+    });
+
     $('.lbox').iLightBox({
         skin:'dark',
         path: 'vertical',

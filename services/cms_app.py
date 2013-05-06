@@ -6,4 +6,11 @@ class CakesApp(CMSApp):
     name = u'Услуги: Торты'
     urls = ["services.cake_urls"]
 
+
+class DecoratesApp(CMSApp):
+    name = u'Услуги: Украшения'
+    urls = ["services.decorate_urls"]
+
+
 apphook_pool.register(CakesApp)
+apphook_pool.register(DecoratesApp)

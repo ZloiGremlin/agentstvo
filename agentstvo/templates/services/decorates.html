@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block content %}
+    <div class="catalog-decorate">
+    {% for decorate in list %}
+        <div class="decor ofl">
+        <div class="thumber fll">
+                {% for image in decorate.images.all %}
+                {% thumbnail image.image '1000' as big %}
+                    <a id="color-{{ image.id }}" {% if not forloop.first %}style="display: none"{% endif %} href="{{ big.url }}" rel="gal-{{ decorate.id }}" class="lbox">
+                        {% thumbnail image.image '310x310' crop='center' as img %}
+                            <img src="{{ img.url }}" width="310" height="310" alt="{{ image.name }}">
+                        {% endthumbnail %}
+                    </a>
+                {% endthumbnail %}
+                {% endfor %}
+        </div>
+            <div class="info">
+                <a class="name" onclick="$(this).parents('.decor').find('a').first().click(); return false;" href="#">
+                    {{ decorate.name }}
+                </a>
+
+                <div class="price">
+                    Стоимость: <span>{{ decorate.price }} руб.</span>
+                </div>
+                <div class="colors ofl">
+                    <span>Цветовая гамма:</span>
+                    <ul>
+                        {% for image in decorate.images.all %}
+                        <li {% if forloop.first %}class="active"{% endif %}><a href="#color-{{ image.id }}" style="background: {{ image.color.rgb }};"></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if decorate.description %}
+                    <p>{{ decorate.description }}</p>
+                {% endif %}
+
+                <a class="buy" href="#">Купить</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+        {% if paginator.page_range|length > 1 %}
+            <div class="pager">
+                Страницы:
+                {% for num in paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <strong>{{ num }}</strong>
+                    {% else %}
+                        <a href="{% url 'cake_list' %}?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
