@@ -18,6 +18,17 @@ $(function () {
         infinite: true
     });
 
+    $('.decor').each(function(){
+        $(this).find('.lbox2').iLightBox({
+            skin:'dark',
+            path: 'vertical',
+            infinite: true
+        });
+
+    });
+
+
+
     $comments = $('<div class="comments"></div>');
 
     $('.lbox-comment').iLightBox({
