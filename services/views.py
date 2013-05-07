@@ -1,6 +1,6 @@
 # Create your views here.
 from django.views.generic import ListView
-from services.models import Cake, Decoration
+from services.models import Cake, Decoration, Requisite
 
 
 class Cakes(ListView):
@@ -19,3 +19,12 @@ class Decorates(ListView):
 
     def get_queryset(self):
         return Decoration.objects.filter(active=True)
+
+
+class Requisites(ListView):
+    context_object_name = "list"
+    paginate_by = 15
+    template_name = 'services/requisites.html'
+
+    def get_queryset(self):
+        return Requisite.objects.filter(active=True)

@@ -82,8 +82,43 @@ class Decoration(models.Model):
         return self.images.filter(color=None)
 
     def thumb(self):
-        im = get_thumbnail(self.get_first_color().image, '70x70', crop='center', quality=100)
-        return '<img src="%s">' % im.url
+        if self.get_first_color():
+            im = get_thumbnail(self.get_first_color().image, '70x70', crop='center', quality=100)
+            return '<img src="%s">' % im.url
+        else:
+            return None
+    thumb.allow_tags = True
+    thumb.short_description = u'Фото'
+
+
+class Requisite(models.Model):
+    class Meta:
+        verbose_name = u'Реквизит'
+        verbose_name_plural = u'Реквизиты'
+        ordering = ['price']
+
+    name = models.CharField(max_length=255, verbose_name=u'Название')
+    description = models.TextField(max_length=255, verbose_name=u'Описание', blank=True, null=True)
+    price = models.IntegerField(verbose_name=u'Цена', default=0)
+    color = models.ManyToManyField('Color', max_length=255, verbose_name=u'Цветовая гамма', blank=True, null=True)
+    active = models.BooleanField(verbose_name=u'Отображение', default=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def get_first_image(self):
+        q = self.images.all()
+        if q.count() > 0:
+            return q[0]
+        else:
+            return None
+
+    def thumb(self):
+        if self.get_first_image():
+            im = get_thumbnail(self.get_first_image().image, '70x70', crop='center', quality=100)
+            return '<img src="%s">' % im.url
+        else:
+            return None
     thumb.allow_tags = True
     thumb.short_description = u'Фото'
 
@@ -109,4 +144,14 @@ class ImageInline(models.Model):
     image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
     color = models.ForeignKey(Color, max_length=255, verbose_name=u'Цвет', blank=True, null=True)
     decoration = models.ForeignKey(Decoration, max_length=255, verbose_name=u'Украшение', related_name='images')
+    sort = models.IntegerField(verbose_name=u'Приоритет', default=100)
+
+
+class ImageInlineReq(models.Model):
+    class Meta:
+        verbose_name = u'Фото'
+        verbose_name_plural = u'Фото'
+
+    image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
+    requisite = models.ForeignKey(Requisite, max_length=255, verbose_name=u'Украшение', related_name='images')
     sort = models.IntegerField(verbose_name=u'Приоритет', default=100)

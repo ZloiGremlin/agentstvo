@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block content %}
+    <div class="catalog-decorate">
+    {% for decorate in list %}
+        <div class="decor req ofl">
+        <div class="thumber fll">
+            {% thumbnail decorate.get_first_image.image '1000' as big %}
+                <a href="{{ big.url }}" class="lbox2">
+                    {% thumbnail decorate.get_first_image.image '360x360' crop='center' as img %}
+                        <img src="{{ img.url }}" width="360" height="360" alt="{{ image.name }}">
+                    {% endthumbnail %}
+                </a>
+            {% endthumbnail %}
+        </div>
+            <div class="info">
+                <a class="name" onclick="$(this).parents('.decor').find('a').first().click(); return false;" href="#">
+                    {{ decorate.name }}
+                </a>
+
+                <div class="price">
+                    Стоимость: <span>{{ decorate.price }} руб.</span>
+                </div>
+                <div class="colors ofl">
+                    <span>Цветовая гамма:</span>
+                    <ul>
+                        {% for color in decorate.color.all %}
+                         <li><a href="" style="background: {{ color.rgb }}; cursor: default;"></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if decorate.description %}
+                    <p>{{ decorate.description }}</p>
+                {% endif %}
+                <div class="thumbs">
+                {% for image in decorate.images.all %}
+                    {% if not forloop.first %}
+                    {% thumbnail image.image '1000' as big %}
+                        <a href="{{ big.url }}" rel="gal-{{ decorate.id }}" class="lbox2">
+                            {% thumbnail image.image '90x90' crop='center' as img %}
+                                <img src="{{ img.url }}" width="90" height="90" alt="{{ image.name }}">
+                            {% endthumbnail %}
+                        </a>
+                    {% endthumbnail %}
+                    {% endif %}
+                {% endfor %}
+                </div>
+
+
+                <a class="buy" href="#">Купить</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+        {% if paginator.page_range|length > 1 %}
+            <div class="pager">
+                Страницы:
+                {% for num in paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <strong>{{ num }}</strong>
+                    {% else %}
+                        <a href="{% url 'cake_list' %}?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
