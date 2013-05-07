@@ -6,6 +6,7 @@
         <div class="decor ofl">
         <div class="thumber fll">
                 {% for image in decorate.images.all %}
+                    {% if image.color %}
                 {% thumbnail image.image '1000' as big %}
                     <a id="color-{{ image.id }}" {% if not forloop.first %}style="display: none"{% endif %} href="{{ big.url }}" rel="gal-{{ decorate.id }}" class="lbox2">
                         {% thumbnail image.image '360x360' crop='center' as img %}
@@ -13,6 +14,7 @@
                         {% endthumbnail %}
                     </a>
                 {% endthumbnail %}
+                    {% endif %}
                 {% endfor %}
         </div>
             <div class="info">
@@ -27,7 +29,9 @@
                     <span>Цветовая гамма:</span>
                     <ul>
                         {% for image in decorate.images.all %}
-                        <li {% if forloop.first %}class="active"{% endif %}><a href="#color-{{ image.id }}" style="background: {{ image.color.rgb }};"></a></li>
+                        {% if image.color %}
+                         <li {% if forloop.first %}class="active"{% endif %}><a href="#color-{{ image.id }}" style="background: {{ image.color.rgb }};"></a></li>
+                        {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
