@@ -40,6 +40,23 @@ h2 {
     box-shadow: 0 0 14px #000;
 }
 
+.thumbs {
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.thumbs a {
+    display: block;
+    width: 90px;
+    float: left;
+    height: 90px;
+    padding: 3px;
+    background: url("../images/border.png");
+    border-radius: 3px;
+    box-shadow: 0 0 4px #000;
+    margin-right: 10px;
+}
+
 .txt.first {
     margin-bottom: 10px;
 }

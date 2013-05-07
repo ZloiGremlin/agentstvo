@@ -78,6 +78,9 @@ class Decoration(models.Model):
         else:
             return None
 
+    def get_thumbs(self):
+        return self.images.filter(color=None)
+
     def thumb(self):
         im = get_thumbnail(self.get_first_color().image, '70x70', crop='center', quality=100)
         return '<img src="%s">' % im.url
@@ -104,6 +107,6 @@ class ImageInline(models.Model):
         verbose_name_plural = u'Фото'
 
     image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
-    color = models.ForeignKey(Color, max_length=255, verbose_name=u'Цвет')
+    color = models.ForeignKey(Color, max_length=255, verbose_name=u'Цвет', blank=True, null=True)
     decoration = models.ForeignKey(Decoration, max_length=255, verbose_name=u'Украшение', related_name='images')
     sort = models.IntegerField(verbose_name=u'Приоритет', default=100)

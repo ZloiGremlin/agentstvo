@@ -306,12 +306,12 @@ h2 {
 }
 
 .decor .thumber {
-    width: 310px;
-    height: 310px;
+    width: 360px;
+    height: 360px;
 }
 
 .decor .info {
-    margin-left: 340px;
+    margin-left: 390px;
     font-family: "vetren", serif;
 }
 
@@ -331,7 +331,7 @@ h2 {
 
 .decor .price {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .decor .price span {
@@ -361,13 +361,12 @@ h2 {
 
 
 .colors li.active a{
-    box-shadow: 0;
     border: 1px solid #fff;
     box-shadow: none;
 }
 
 .colors{
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .buy{

@@ -8,8 +8,8 @@
                 {% for image in decorate.images.all %}
                 {% thumbnail image.image '1000' as big %}
                     <a id="color-{{ image.id }}" {% if not forloop.first %}style="display: none"{% endif %} href="{{ big.url }}" rel="gal-{{ decorate.id }}" class="lbox">
-                        {% thumbnail image.image '310x310' crop='center' as img %}
-                            <img src="{{ img.url }}" width="310" height="310" alt="{{ image.name }}">
+                        {% thumbnail image.image '360x360' crop='center' as img %}
+                            <img src="{{ img.url }}" width="360" height="360" alt="{{ image.name }}">
                         {% endthumbnail %}
                     </a>
                 {% endthumbnail %}
@@ -34,6 +34,18 @@
                 {% if decorate.description %}
                     <p>{{ decorate.description }}</p>
                 {% endif %}
+                <div class="thumbs">
+                {% for image in decorate.get_thumbs %}
+                    {% thumbnail image.image '1000' as big %}
+                        <a href="{{ big.url }}" rel="gal-{{ decorate.id }}" class="lbox">
+                            {% thumbnail image.image '90x90' crop='center' as img %}
+                                <img src="{{ img.url }}" width="90" height="90" alt="{{ image.name }}">
+                            {% endthumbnail %}
+                        </a>
+                    {% endthumbnail %}
+                {% endfor %}
+                </div>
+
 
                 <a class="buy" href="#">Купить</a>
             </div>
