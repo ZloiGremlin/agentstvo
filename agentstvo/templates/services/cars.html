@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block content %}
+
+<div class="catalog-decorate car">
+    {% for cake in list %}
+        <div class="decor ofl" id="cake-{{ cake.id }}">
+            <div class="thumber fll">
+                {% thumbnail cake.image '1000' as big %}
+                <a href="{{ big.url }}" rel="gal" data-cake='{{ cake.id }}' class="lbox-comment">
+                    {% thumbnail cake.image '310x310' crop='center' as img %}
+                        <img src="{{ img.url }}" width="310" height="310" alt="{{ cake.name }}">
+                    {% endthumbnail %}
+                </a>
+                {% endthumbnail %}
+            </div>
+            <div class="info">
+                <h2>{{ cake.name }}</h2>
+
+                <div class="price" style="float: none; padding-bottom: 10px;">
+                    Стоимость за час: <span>{{ cake.price }} руб.</span>
+                </div>
+
+                <p>{{ cake.description }}</p>
+
+                <a class="order" href="#">Заказать</a>
+
+
+            </div>
+        </div>
+
+    {% endfor %}
+    {% if paginator.page_range|length > 1 %}
+        <div class="pager">
+            Страницы:
+            {% for num in paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <strong>{{ num }}</strong>
+                    {% else %}
+                    <a href="{% url 'cake_list' %}?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

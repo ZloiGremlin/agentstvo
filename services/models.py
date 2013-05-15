@@ -209,3 +209,25 @@ class Artist(models.Model):
         return '<img src="%s">' % im.url
     thumb.allow_tags = True
     thumb.short_description = u'Фото'
+
+
+class Car(models.Model):
+    class Meta:
+        verbose_name = u'Автомобиль'
+        verbose_name_plural = u'Автомобили'
+        ordering = ['price']
+
+    name = models.CharField(max_length=255, verbose_name=u'Название')
+    description = models.TextField(max_length=255, verbose_name=u'Описание', blank=True, null=True)
+    price = models.IntegerField(verbose_name=u'Цены', default=0)
+    image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
+    active = models.BooleanField(verbose_name=u'Отображение', default=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def thumb(self):
+        im = get_thumbnail(self.image, '70x70', crop='center', quality=100)
+        return '<img src="%s">' % im.url
+    thumb.allow_tags = True
+    thumb.short_description = u'Фото'

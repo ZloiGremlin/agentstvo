@@ -38,6 +38,11 @@ class MusicApp(CMSApp):
     urls = ["services.music_urls"]
 
 
+class CarApp(CMSApp):
+    name = u'Услуги: Автомобили'
+    urls = ["services.car_urls"]
+
+
 apphook_pool.register(CakesApp)
 apphook_pool.register(DecoratesApp)
 apphook_pool.register(RequisitesApp)
@@ -45,3 +50,4 @@ apphook_pool.register(ArtistApp)
 apphook_pool.register(McApp)
 apphook_pool.register(KidsApp)
 apphook_pool.register(MusicApp)
+apphook_pool.register(CarApp)
