@@ -33,7 +33,6 @@ class ReqAdmin(admin.ModelAdmin):
     filter_horizontal = ['color']
 
 
-
 class ServiceAdmin(AdminImageMixin, admin.ModelAdmin):
     search_fields = ['name']
     list_display = ['name']
@@ -41,9 +40,11 @@ class ServiceAdmin(AdminImageMixin, admin.ModelAdmin):
 
 class CakeAdmin(AdminImageMixin, admin.ModelAdmin):
     search_fields = ['name']
-    list_display = ['thumb', 'name', 'price', 'weight', 'active']
+    list_filter = ['category']
+    list_display = ['thumb', 'name', 'price', 'weight', 'active', 'category']
     list_display_links = ['thumb', 'name']
-    list_editable = ['active']
+    list_editable = ['active', 'category']
+
 
 class CategoryCakeAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['thumb', 'name', 'sort']
