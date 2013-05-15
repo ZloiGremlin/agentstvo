@@ -278,6 +278,7 @@ h1 {
     color: #f6ff07;
     display: block;
     padding-top: 5px;
+    white-space: nowrap;
 
 }
 
@@ -566,5 +567,24 @@ h2 {
 }
 
 
+.catalog-cake .cake .thumber {
+    width: 220px;
+    height: 220px;
+}
 
+.txt.foto {
+    margin-left: 560px;
+}
 
+.txt.foto .buy {
+    background: none;
+    border-radius: 0;
+    display: block;
+    width: auto;
+    text-align: center;
+    height: auto;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    padding-top: 0;
+}

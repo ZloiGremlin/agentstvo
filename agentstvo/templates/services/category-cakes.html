@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block content %}
+
+<div class="category-cake">
+    {% for category in list %}
+
+        <div class="cake {% if forloop.counter|divisibleby:3 %}last{% endif %}">
+            <a class="name" href="{% url 'cake_list' category.url %}">{{ category.name }}</a>
+            <a class="thumber" href="{% url 'cake_list' category.url %}">
+                {% thumbnail category.image '270x270' as img %}
+                    <img src="{{ img.url }}" width="270" height="270" alt="{{ cake.name }}">
+                {% endthumbnail %}
+            </a>
+
+            <div class="clr"></div>
+            <p>{{ category.description }}</p>
+            <a class="see-all" href="{% url 'cake_list' category.url %}">Смотреть все</a>
+        </div>
+
+        {% if forloop.counter|divisibleby:3 or forloop.last %}
+            <div class="clr"></div>
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+

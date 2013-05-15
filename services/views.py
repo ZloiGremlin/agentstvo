@@ -1,6 +1,7 @@
 # Create your views here.
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
-from services.models import Cake, Decoration, Requisite
+from services.models import Cake, Decoration, Requisite, CategoryCake
 
 
 class Cakes(ListView):
@@ -9,7 +10,15 @@ class Cakes(ListView):
     template_name = 'services/cakes.html'
 
     def get_queryset(self):
-        return Cake.objects.filter(active=True)
+        cat = get_object_or_404(CategoryCake, url=self.kwargs['slug'])
+        return Cake.objects.filter(active=True, category=cat)
+
+class CategoryCakes(ListView):
+    context_object_name = "list"
+    template_name = 'services/category-cakes.html'
+
+    def get_queryset(self):
+        return CategoryCake.objects.all()
 
 
 class Decorates(ListView):
