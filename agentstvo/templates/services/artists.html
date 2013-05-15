@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block content %}
+
+    {% for artist in list %}
+        <div class="category-mc">
+        <div class="mc" id="cake-{{ artist.id }}">
+
+            {% thumbnail artist.image '1000' as big %}
+                <a href="{{ big.url }}" rel="gal" data-cake='{{ artist.id }}' class="lbox-comment thumber">
+                    {% thumbnail artist.image '240' crop='center' as img %}
+                        <img src="{{ img.url }}" width="240" height="{{ img.width }}" alt="{{ artist.name }}">
+                    {% endthumbnail %}
+                </a>
+            {% endthumbnail %}
+
+            <div class="info">
+                <h2>{{ artist.name }}</h2>
+
+                <p>{{ artist.description }}</p>
+
+                <div class="price">Цены от <span>{{ artist.price }} <em>руб.</em></span></div>
+
+                <a class="order" href="#">Заказать</a>
+            </div>
+        </div>
+
+    {% endfor %}
+    {% if paginator.page_range|length > 1 %}
+        <div class="pager">
+            Страницы:
+            {% for num in paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <strong>{{ num }}</strong>
+                    {% else %}
+                    <a href="{% url 'cake_list' %}?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

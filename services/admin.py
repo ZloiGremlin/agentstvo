@@ -1,5 +1,5 @@
 # vim:fileencoding=utf-8
-from services.models import Service, Cake, Decoration, ImageInline, Color, ImageInlineReq, Requisite, CategoryCake
+from services.models import Service, Cake, Decoration, ImageInline, Color, ImageInlineReq, Requisite, CategoryCake, Artist
 from django.contrib import admin
 from sorl.thumbnail.admin import AdminImageMixin, AdminInlineImageMixin
 
@@ -52,9 +52,18 @@ class CategoryCakeAdmin(AdminImageMixin, admin.ModelAdmin):
     list_editable = ['sort']
     prepopulated_fields = {"url": ("name",)}
 
+
+class ArtistAdmin(AdminImageMixin, admin.ModelAdmin):
+    search_fields = ['name']
+    list_filter = ['type']
+    list_display = ['thumb', 'name', 'price', 'active', 'type']
+    list_display_links = ['thumb', 'name']
+    list_editable = ['active', 'type']
+
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Cake, CakeAdmin)
 admin.site.register(Decoration, DecorationAdmin)
 admin.site.register(Requisite, ReqAdmin)
 admin.site.register(CategoryCake, CategoryCakeAdmin)
 admin.site.register(Color)
+admin.site.register(Artist, ArtistAdmin)

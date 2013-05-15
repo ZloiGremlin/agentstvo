@@ -445,7 +445,7 @@ h2 {
 .category-mc .thumber {
     float: left;
     width: 240px;
-    height: 300px;
+    height: auto;
 }
 
 .category-mc .info {

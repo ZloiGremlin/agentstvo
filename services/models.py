@@ -178,3 +178,34 @@ class ImageInlineReq(models.Model):
     image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
     requisite = models.ForeignKey(Requisite, max_length=255, verbose_name=u'Украшение', related_name='images')
     sort = models.IntegerField(verbose_name=u'Приоритет', default=100)
+
+
+
+class Artist(models.Model):
+    class Meta:
+        verbose_name = u'Артист'
+        verbose_name_plural = u'Артисты'
+        ordering = ['price']
+
+    ARTIST_TYPE = (
+        ('artist', u'Артист'),
+        ('mc', u'Ведущий'),
+        ('kids', u'Для детей'),
+        ('music', u'Музыкант'),
+    )
+
+    name = models.CharField(max_length=255, verbose_name=u'Имя/Название')
+    description = models.TextField(max_length=255, verbose_name=u'Описание', blank=True, null=True)
+    price = models.IntegerField(verbose_name=u'Цены', default=0)
+    image = ImageField(upload_to=get_file_path, verbose_name=u'Фото')
+    type = models.CharField(max_length=255, verbose_name=u'Тип', blank=True, null=True, choices=ARTIST_TYPE)
+    active = models.BooleanField(verbose_name=u'Отображение', default=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def thumb(self):
+        im = get_thumbnail(self.image, '70x70', crop='center', quality=100)
+        return '<img src="%s">' % im.url
+    thumb.allow_tags = True
+    thumb.short_description = u'Фото'
