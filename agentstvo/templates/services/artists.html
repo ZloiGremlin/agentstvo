@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% block content %}
-
+    <div class="category-mc">
     {% for artist in list %}
-        <div class="category-mc">
+
         <div class="mc" id="cake-{{ artist.id }}">
 
             {% thumbnail artist.image '1000' as big %}
