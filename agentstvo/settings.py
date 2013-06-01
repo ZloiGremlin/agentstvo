@@ -134,6 +134,8 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'paralax_slider',
     'services',
+    'form_designer',
+    'form_designer.contrib.cms_plugins.form_designer_form',
 )
 
 CKEDITOR_SETTINGS = {
