@@ -12,6 +12,15 @@ $(function () {
         return false;
     });
 
+
+    $('.thumbnails').each(function(){
+        $(this).find('.lbox3').iLightBox({
+            skin:'dark',
+            path: 'vertical',
+            infinite: true
+        });
+    });
+
     $('.lbox').iLightBox({
         skin:'dark',
         path: 'vertical',
