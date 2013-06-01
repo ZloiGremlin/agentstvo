@@ -1,5 +1,14 @@
 {% load friendly %}
 <h1>{{ form_definition.title }}</h1>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 {% if form_definition.body %}
 <div class="form-description">
  {{ form_definition.body|safe }}
