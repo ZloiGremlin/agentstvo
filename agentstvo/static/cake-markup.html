@@ -5,6 +5,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <link type="text/css" rel="stylesheet" media="all" href="css/font.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="css/reset.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="css/slider.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="css/nivo-slider.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="css/style.css"/>
@@ -44,83 +45,96 @@
 
 
 <div class="category-cake">
-    <div class="cake">
-        <a class="name" href="#">Детские</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-kids.jpg" width="270" height="270" alt=""/>
-        </a>
+    <ul class="messages">
 
-        <div class="clr"></div>
-        <p>Мы предлагаем изготовить на заказ оригинальные корпоративные торты любой тематики. Кроме этого большой
-            популярностью у наших клиентов пользуются детские торты, которые станут главным украшением праздника для
-            ребенка. Все торты </p>
-        <a class="see-all" href="#">Смотреть все</a>
+        <li class="success">Исправьте ошибки</li>
+
+    </ul>
+
+    <div class="form-description">
+        <p>Также Вы можете позвонить
+            нам по телефону</p>
+
+        <div class="phone">+7 (906) <span>669-55-16</span></div>
+        <div class="adr">
+            или приехать к нам в офис:<br>
+            <span>
+            <span>г. Вязьма</span>, ул. Ленина, д. 56,
+            офис 110
+                </span>
+        </div>
     </div>
-    <div class="cake">
-        <a class="name" href="#">Свадебныее</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-married.jpg" width="270" height="270" alt=""/>
-        </a>
+    <table class="forms">
+        <tbody>
 
-        <div class="clr"></div>
-        <p>Вы можете выбрать свадебные торты или любые другие из представленных в каталоге или описать нам свою идею, и
-            мы с удовольствием воплотим ее в кондитерском изделии. Благодаря таланту наших кондитеров и вниманию к
-            пожеланиям клиента, мы </p>
-        <a class="see-all" href="#">Смотреть все</a>
-    </div>
-    <div class="cake last">
-        <a class="name" href="#">На годик</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-1-year.jpg" width="270" height="270" alt=""/>
-        </a>
 
-        <div class="clr"></div>
-        <p>Мы предлагаем изготовить на заказ оригинальные корпоративные торты любой тематики. Кроме этого большой
-            популярностью у наших клиентов пользуются детские торты, которые станут главным украшением праздника для
-            ребенка. Все торты </p>
-        <a class="see-all" href="#">Смотреть все</a>
-    </div>
+        <tr class="field required">
+            <th>
+                <label for="id_name">Имя</label>
+            </th>
+            <td>
+                <input id="id_name" name="name" type="text">
 
-    <div class="clr"></div>
+            </td>
+        </tr>
 
-    <div class="cake">
-        <a class="name" href="#">Мужские</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-man.jpg" width="270" height="270" alt=""/>
-        </a>
 
-        <div class="clr"></div>
-        <p>Мы предлагаем изготовить на заказ оригинальные корпоративные торты любой тематики. Кроме этого большой
-            популярностью у наших клиентов пользуются детские торты, которые станут главным украшением праздника для
-            ребенка. Все торты </p>
-        <a class="see-all" href="#">Смотреть все</a>
-    </div>
-    <div class="cake">
-        <a class="name" href="#">Женские</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-woman.jpg" width="270" height="270" alt=""/>
-        </a>
+        <tr class="field required">
+            <th>
+                <label for="id_e-mail">E-mail</label>
+            </th>
+            <td>
+                <input id="id_e-mail" name="e-mail" type="text">
 
-        <div class="clr"></div>
-        <p>Вы можете выбрать свадебные торты или любые другие из представленных в каталоге или описать нам свою идею, и
-            мы с удовольствием воплотим ее в кондитерском изделии. Благодаря таланту наших кондитеров и вниманию к
-            пожеланиям клиента, мы </p>
-        <a class="see-all" href="#">Смотреть все</a>
-    </div>
-    <div class="cake last">
-        <a class="name" href="#">Праздничные</a>
-        <a class="thumber" href="#">
-            <img src="images/cake-celebrate.jpg" width="270" height="270" alt=""/>
-        </a>
+            </td>
+        </tr>
 
-        <div class="clr"></div>
-        <p>Мы предлагаем изготовить на заказ оригинальные корпоративные торты любой тематики. Кроме этого большой
-            популярностью у наших клиентов пользуются детские торты, которые станут главным украшением праздника для
-            ребенка. Все торты </p>
-        <a class="see-all" href="#">Смотреть все</a>
-    </div>
 
-    <div class="clr"></div>
+        <tr class="field ">
+            <th>
+                <label for="id_phone">Телефон</label>
+            </th>
+            <td>
+
+                <input id="id_phone" name="phone" type="text">
+                <ul class="errorlist"><li>Обязательное поле.</li></ul>
+
+            </td>
+        </tr>
+
+
+        <tr class="field ">
+            <th>
+                <label for="id_service">Услуга</label>
+            </th>
+            <td>
+                <input id="id_service" name="service" type="text">
+
+            </td>
+        </tr>
+
+
+        <tr class="field ">
+            <th>
+                <label for="id_comment">Комментарий</label>
+            </th>
+            <td>
+                <textarea cols="40" id="id_comment" name="comment" rows="10"></textarea>
+
+            </td>
+        </tr>
+
+
+        <tr class="buttons">
+            <td>&nbsp;</td>
+            <th>
+                <input type="submit" value="Отправить заявку">
+            </th>
+        </tr>
+        <tr>
+        </tr>
+        </tbody>
+    </table>
 
 
 </div>

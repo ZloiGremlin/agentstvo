@@ -468,7 +468,7 @@ h2 {
 
 }
 
-.category-mc .top-info p{
+.category-mc .top-info p {
     line-height: 16px;
 }
 
@@ -488,10 +488,9 @@ h2 {
 
 }
 
-.send-mes:hover{
+.send-mes:hover {
     background: url("../images/buy-button.png") repeat-x bottom;
 }
-
 
 .order {
     background: url("../images/buy-button.png") repeat-x top;
@@ -506,66 +505,60 @@ h2 {
     text-align: center;
     padding-top: 8px;
 
-
 }
 
-.order:hover{
+.order:hover {
     background: url("../images/buy-button.png") repeat-x bottom;
 }
 
-
-.mc{
+.mc {
     margin-bottom: 70px;
 }
 
-.mc .name{
+.mc .name {
     font-family: 'vetren', serif;
     text-decoration: none;
     font-size: 30px;
     display: block;
     margin-bottom: 20px;
-    
+
 }
 
-.mc .name:hover{
+.mc .name:hover {
     text-decoration: underline;
 }
 
-
-.mc p{
+.mc p {
     line-height: 16px;
     font-size: 14px;
     margin-bottom: 25px;
 }
 
-.mc .price{
+.mc .price {
     font-family: 'vetren', serif;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-.mc .price span{
+.mc .price span {
     font-size: 36px;
     color: #f6ff07;
 }
 
-.mc .price span em{
+.mc .price span em {
     font-style: normal;
     font-size: 24px;
 }
 
-
-.catalog-decorate.car .decor .thumber{
+.catalog-decorate.car .decor .thumber {
     width: 310px;
     height: 310px;
 
 }
 
-
-.catalog-decorate.car .info{
+.catalog-decorate.car .info {
     margin-left: 340px;
 }
-
 
 .catalog-cake .cake .thumber {
     width: 220px;
@@ -587,4 +580,106 @@ h2 {
     color: #000;
     text-decoration: none;
     padding-top: 0;
+}
+
+.forms label {
+    font-size: 24px;
+    width: 130px;
+    font-family: "vetren", sans-serif;
+    text-align: left;
+}
+
+.forms input[type=text] {
+    width: 284px;
+    height: 32px;
+    padding: 0 10px;
+    margin-bottom: 3px;
+}
+
+.forms textarea {
+    width: 405px;
+    padding: 10px;
+    resize: none;
+    height: 80px;
+}
+
+.forms td, .forms th {
+    padding-bottom: 10px;
+}
+
+.forms input[type=submit] {
+    background: url("../images/buy-button.png") repeat-x top;
+    height: 45px;
+    color: #000;
+    font-size: 28px;
+    font-family: 'vetren', sans-serif;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0 10px;
+
+}
+
+.forms input[type=submit]:hover {
+    background-position: bottom;
+}
+
+.forms .buttons th {
+    text-align: left;
+}
+
+.content .form-description {
+    float: right;
+    font-family: 'vetren', sans-serif;
+    font-size: 26px;
+    width: 325px;
+}
+
+.content .form-description p {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.content .form-description .phone {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content .form-description .phone span {
+    color: #f6ff04;
+    font-size: 52px;
+}
+
+.content .form-description .adr span {
+    font-size: 32px;
+
+}
+
+.content .form-description .adr span span {
+    color: #f6ff04;
+
+}
+
+
+.errorlist{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #f6ff04;
+}
+
+
+.messages .error{
+    background: red;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.messages .success{
+    background: green;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
 }
