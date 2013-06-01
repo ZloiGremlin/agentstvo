@@ -21,7 +21,7 @@
 
                 <div class="price">Цены от <span>{{ artist.price }} <em>руб.</em></span></div>
 
-                <a class="order" href="#">Заказать</a>
+                <a class="order" href="/order/?service={{ artist.name|urlencode }}">Заказать</a>
             </div>
         <div class="clr"></div>
         </div>
