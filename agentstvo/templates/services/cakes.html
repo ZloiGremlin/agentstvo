@@ -23,7 +23,7 @@
                     {% endif %}
                 </div>
                 <span class="price"><em>Цена за кг.</em> <span>{{ cake.price }}</span> руб.</span>
-                <a class="order" href="/order/?service={{ cake.name|urlencode }}">Заказать</a>
+                <a class="order" href="/order/?service=%D0%A2%D0%BE%D1%80%D1%82%20{{ cake.name|urlencode }}">Заказать</a>
             </div>
         </div>
         {% if forloop.counter|divisibleby:2 or forloop.last %}
